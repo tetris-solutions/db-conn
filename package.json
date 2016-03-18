@@ -21,6 +21,7 @@
   "dependencies": {
     "@tetris/serialize-error": "^1.0.0",
     "knex": "^0.9.0",
+    "lodash": "^4.6.1",
     "uuid": "^2.0.1",
     "winston": "^2.2.0",
     "winston-logstash": "^0.2.11"
