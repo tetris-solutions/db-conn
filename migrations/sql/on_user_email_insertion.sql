@@ -1,4 +1,4 @@
-create trigger on_user_email_deletion
+create trigger on_user_email_insertion
     after insert
     on user_email
     for each row
