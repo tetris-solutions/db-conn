@@ -1,1 +1,5 @@
-module.exports = require('./lib/db')
+var d = require('./lib/db')
+
+exports.db = d.db
+exports.seed = d.seed
+exports.migrate = d.seed
