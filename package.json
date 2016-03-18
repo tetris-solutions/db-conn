@@ -7,11 +7,16 @@
     "type": "git",
     "url": "git+https://github.com/tetris-solutions/db-conn.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tetris-solutions/db-conn/issues"
   },
+  "files": [
+    "lib",
+    "migrations",
+    "seeds",
+    "index.js",
+    "knexfile.js"
+  ],
   "homepage": "https://github.com/tetris-solutions/db-conn#readme",
   "dependencies": {
     "@tetris/serialize-error": "^1.0.0",
