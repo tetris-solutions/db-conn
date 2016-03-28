@@ -35,6 +35,7 @@ exports.down = function (knex, Promise) {
       table.dropIndex(['platform', 'external_id'])
       table.dropColumn('token')
       table.dropColumn('token_timestamp')
+      table.dropColumn('token_expiration')
     })
     .dropTable('user_account')
 }
