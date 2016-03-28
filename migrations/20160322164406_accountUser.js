@@ -4,6 +4,7 @@ exports.up = function (knex, Promise) {
       table.unique(['platform', 'external_id'])
       table.jsonb('token')
       table.timestamp('token_timestamp')
+      table.timestamp('token_expiration')
     })
     .createTable('user_account', function (table) {
       table.uuid('id').primary()
