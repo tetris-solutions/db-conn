@@ -9,7 +9,7 @@ begin
         JOIN company ON company.id = role.company
         WHERE user_role.user = OLD.user AND company.owner = OLD.user
     ) then
-        raise 'Can not delete the company owner';
+        raise 'Cannot delete the company owner';
         return null;
     end if;
     return OLD;
