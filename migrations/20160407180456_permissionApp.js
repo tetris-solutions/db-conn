@@ -1,5 +1,5 @@
 exports.up = function (knex, Promise) {
-  knex.schema
+  return knex.schema
     .table('permission', function (table) {
       table.string('app', 20)
         .references('id')
@@ -14,4 +14,6 @@ exports.up = function (knex, Promise) {
 
 exports.down = function (knex, Promise) {
   // sorry, not sorry
+  console.error('Sorry fam.')
+  process.exit(1)
 }
