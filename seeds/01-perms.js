@@ -17,11 +17,10 @@ exports.seed = function (knex, Promise) {
 
   return sequential([
     function () {
-      return knex('scope').del()
+      return knex('app').del()
     },
     function () {
-      return knex('scope').insert([
-        {id: 'Tetris', name: 'Tetris Base'},
+      return knex('app').insert([
         {id: 'AdPeek', name: 'AdPeek App'}
       ])
     },
@@ -29,10 +28,13 @@ exports.seed = function (knex, Promise) {
       return knex('permission').del()
     },
     function () {
-      return knex('permission').insert([
-        {id: 'CreateRole', scope: 'Tetris'},
-        {id: 'EditRoleMembers', scope: 'Tetris'}
-      ])
+      return knex('permission')
+        .insert([
+          {id: 'CreateRole'},
+          {id: 'EditRoleMembers'},
+          {id: 'APCreateAccount', app: 'AdPeek'},
+          {id: 'APCreateFolder', app: 'AdPeek'}
+        ])
     },
     function () {
       return knex('permission_name').del()
@@ -42,7 +44,11 @@ exports.seed = function (knex, Promise) {
         {id: uuid(), permission: 'CreateRole', locale: 'pt-BR', name: 'Criar grupo'},
         {id: uuid(), permission: 'CreateRole', locale: 'en', name: 'Create role'},
         {id: uuid(), permission: 'EditRoleMembers', locale: 'pt-BR', name: 'Editar membros de grupo'},
-        {id: uuid(), permission: 'EditRoleMembers', locale: 'en', name: 'Edit role members'}
+        {id: uuid(), permission: 'EditRoleMembers', locale: 'en', name: 'Edit role members'},
+        {id: uuid(), permission: 'APCreateAccount', locale: 'pt-BR', name: 'Criar conta AdPeek'},
+        {id: uuid(), permission: 'APCreateAccount', locale: 'en', name: 'Create AdPeek account'},
+        {id: uuid(), permission: 'APCreateFolder', locale: 'pt-BR', name: 'Criar pasta'},
+        {id: uuid(), permission: 'APCreateFolder', locale: 'en', name: 'Create folder'}
       ])
     },
     function () {
