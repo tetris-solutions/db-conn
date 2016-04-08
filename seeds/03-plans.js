@@ -45,13 +45,13 @@ exports.seed = function (knex, Promise) {
     },
     function () {
       var demoPerms = perms.map(function (permission) {
-        return {id: uuid(), role: plans.demo.id, permission: permission}
+        return {id: uuid(), plan: plans.demo.id, permission: permission}
       })
       var starterPackPerms = without(perms, 'APBudgetOptimization').map(function (permission) {
-        return {id: uuid(), role: plans.starterPack.id, permission: permission}
+        return {id: uuid(), plan: plans.starterPack.id, permission: permission}
       })
       var ultimatePerms = perms.map(function (permission) {
-        return {id: uuid(), role: plans.ultimate.id, permission: permission}
+        return {id: uuid(), plan: plans.ultimate.id, permission: permission}
       })
 
       return knex('plan_permission').insert(demoPerms.concat(starterPackPerms).concat(ultimatePerms))
