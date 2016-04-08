@@ -2,6 +2,15 @@ var predefinedRoles = exports.predefinedRoles = {
   admin: 'a89f4626-e10f-469a-8bc3-3fc33e4a0487'
 }
 
+var permissions = exports.permissions = [
+  {id: 'CreateRole'},
+  {id: 'EditRoleMembers'},
+  {id: 'APCreateAccount', app: 'AdPeek'},
+  {id: 'APCreateFolder', app: 'AdPeek'},
+  {id: 'APCreateCampaign', app: 'AdPeek'},
+  {id: 'APAutoBudget', app: 'AdPeek'},
+  {id: 'APBudgetOptimization', app: 'AdPeek'}
+]
 var uuid = require('uuid').v4
 
 exports.seed = function (knex, Promise) {
@@ -29,12 +38,7 @@ exports.seed = function (knex, Promise) {
     },
     function () {
       return knex('permission')
-        .insert([
-          {id: 'CreateRole'},
-          {id: 'EditRoleMembers'},
-          {id: 'APCreateAccount', app: 'AdPeek'},
-          {id: 'APCreateFolder', app: 'AdPeek'}
-        ])
+        .insert(permissions)
     },
     function () {
       return knex('permission_name').del()
