@@ -4,10 +4,10 @@ $$
 begin
 
     UPDATE company_plan
-    SET company_plan.expiration = now()
+    SET expiration = now()
     WHERE
-        company_plan.company = NEW.company
-        AND company_plan.expiration > now();
+        company = NEW.company
+        AND expiration > now();
 
     return NEW;
 end
