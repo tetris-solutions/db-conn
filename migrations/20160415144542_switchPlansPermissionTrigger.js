@@ -6,7 +6,6 @@ exports.up = function (knex, Promise) {
   }
   return knex.schema
     .raw('DROP TRIGGER IF EXISTS on_company_plan_insertion ON company_plan;')
-    .raw('drop function terminate_current_plan();')
     .raw(readSql('switch_plans'))
     .raw(readSql('on_company_plan_insertion'))
 }
