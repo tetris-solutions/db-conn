@@ -1,7 +1,7 @@
 exports.up = function (knex, Promise) {
   return knex.schema
     .table('permission', function (table) {
-      table.string('app', 20)
+      table.string('app', 30)
         .references('id')
         .inTable('app')
         .onDelete('cascade')

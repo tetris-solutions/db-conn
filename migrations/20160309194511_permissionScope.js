@@ -1,7 +1,7 @@
 exports.up = function (knex, Promise) {
   return knex.schema
     .createTable('scope', function (table) {
-      table.string('id', 20).primary()
+      table.string('id', 30).primary()
 
       table.string('name', 30)
         .notNullable()
@@ -11,7 +11,7 @@ exports.up = function (knex, Promise) {
         .defaultTo(knex.fn.now())
     })
     .table('permission', function (table) {
-      table.string('scope', 20)
+      table.string('scope', 30)
         .references('id')
         .inTable('scope')
         .onDelete('restrict')

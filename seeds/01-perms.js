@@ -5,7 +5,7 @@ var predefinedRoles = exports.predefinedRoles = {
 var permissions = exports.permissions = [
   {id: 'CreateRole'},
   {id: 'EditRoleMembers'},
-  {id: 'APCreateAccount', app: 'AdPeek'},
+  {id: 'APCreateWorkspace', app: 'AdPeek'},
   {id: 'APCreateFolder', app: 'AdPeek'},
   {id: 'APCreateCampaign', app: 'AdPeek'},
   {id: 'APAutoBudget', app: 'AdPeek'},
@@ -49,10 +49,16 @@ exports.seed = function (knex, Promise) {
         {id: uuid(), permission: 'CreateRole', locale: 'en', name: 'Create role'},
         {id: uuid(), permission: 'EditRoleMembers', locale: 'pt-BR', name: 'Editar membros de grupo'},
         {id: uuid(), permission: 'EditRoleMembers', locale: 'en', name: 'Edit role members'},
-        {id: uuid(), permission: 'APCreateAccount', locale: 'pt-BR', name: 'Criar conta AdPeek'},
-        {id: uuid(), permission: 'APCreateAccount', locale: 'en', name: 'Create AdPeek account'},
+        {id: uuid(), permission: 'APCreateWorkspace', locale: 'pt-BR', name: 'Criar área de trabalho'},
+        {id: uuid(), permission: 'APCreateWorkspace', locale: 'en', name: 'Create workspace'},
         {id: uuid(), permission: 'APCreateFolder', locale: 'pt-BR', name: 'Criar pasta'},
-        {id: uuid(), permission: 'APCreateFolder', locale: 'en', name: 'Create folder'}
+        {id: uuid(), permission: 'APCreateFolder', locale: 'en', name: 'Create folder'},
+        {id : uuid(), permission: 'APCreateCampaign', locale: 'pt-BR', name: 'Criar campanha'},
+        {id : uuid(), permission: 'APCreateCampaign', locale: 'en', name: 'Create campaign'},
+        {id : uuid(), permission: 'APAutoBudget', locale: 'pt-BR', name: 'Configurar o Auto-Budget'},
+        {id : uuid(), permission: 'APAutoBudget', locale: 'en', name: 'Setup Auto-Bugdget'},
+        {id : uuid(), permission: 'APBudgetOptimization', locale: 'pt-BR', name: 'Acesso a otimizações de budget'},
+        {id : uuid(), permission: 'APBudgetOptimization', locale: 'en', name: 'Access to budget optimizations'}
       ])
     },
     function () {

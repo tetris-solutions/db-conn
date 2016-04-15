@@ -31,11 +31,11 @@ exports.up = function (knex, Promise) {
       .onDelete('restrict')
       .onUpdate('restrict')
       .notNullable()
-    table.string('name', 20).notNullable().index()
+    table.string('name', 30).notNullable().index()
   })
 
   var createCompany = normalized(function (table) {
-    table.string('name', 20).notNullable().index()
+    table.string('name', 30).notNullable().index()
 
     table.uuid('owner')
       .references('id')
@@ -64,7 +64,7 @@ exports.up = function (knex, Promise) {
   })
 
   var createPermission = function (table) {
-    table.string('id', 20).primary()
+    table.string('id', 30).primary()
     addCreation(table)
   }
 
@@ -76,7 +76,7 @@ exports.up = function (knex, Promise) {
       .onUpdate('restrict')
       .notNullable()
 
-    table.string('permission', 20)
+    table.string('permission', 30)
       .references('id')
       .inTable('permission')
       .onDelete('cascade')
@@ -88,7 +88,7 @@ exports.up = function (knex, Promise) {
 
   var createLocale = function (table) {
     table.string('id', 5).primary()
-    table.string('name', 20).notNullable().index()
+    table.string('name', 30).notNullable().index()
     addCreation(table)
   }
 
@@ -100,7 +100,7 @@ exports.up = function (knex, Promise) {
       .onUpdate('restrict')
       .notNullable()
 
-    table.string('permission', 20)
+    table.string('permission', 30)
       .references('id')
       .inTable('permission')
       .onDelete('cascade')
@@ -120,7 +120,7 @@ exports.up = function (knex, Promise) {
       .onUpdate('restrict')
       .notNullable()
 
-    table.string('permission', 20)
+    table.string('permission', 30)
       .references('id')
       .inTable('permission')
       .onDelete('cascade')
@@ -145,7 +145,7 @@ exports.up = function (knex, Promise) {
       .onUpdate('restrict')
       .notNullable()
 
-    table.string('name', 20).notNullable().index()
+    table.string('name', 30).notNullable().index()
 
     table.unique(['locale', 'predefined_role'])
   })

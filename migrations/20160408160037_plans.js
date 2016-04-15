@@ -39,7 +39,7 @@ exports.up = function (knex, Promise) {
         .onUpdate('restrict')
         .notNullable()
 
-      table.string('permission', 20)
+      table.string('permission', 30)
         .references('id')
         .inTable('permission')
         .onDelete('cascade')

@@ -1,14 +1,14 @@
 exports.up = function (knex, Promise) {
   return knex.schema
     .createTable('platform', function (table) {
-      table.string('id', 20).primary()
+      table.string('id', 30).primary()
       table.string('name', 30).notNullable()
       table.timestamp('creation').notNullable().defaultTo(knex.fn.now())
     })
     .createTable('account', function (table) {
       table.uuid('id').primary()
 
-      table.string('platform', 20)
+      table.string('platform', 30)
         .references('id')
         .inTable('platform')
         .onDelete('restrict')

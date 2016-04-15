@@ -1,7 +1,7 @@
 exports.up = function (knex, Promise) {
   return knex.schema
     .createTable('app', function (table) {
-      table.string('id', 20).primary()
+      table.string('id', 30).primary()
       table.string('name', 40).notNullable()
       table.timestamp('creation')
         .notNullable()
@@ -10,7 +10,7 @@ exports.up = function (knex, Promise) {
     .createTable('company_app', function (table) {
       table.uuid('id').primary()
 
-      table.string('app', 20)
+      table.string('app', 30)
         .references('id')
         .inTable('app')
         .onDelete('cascade')
@@ -38,7 +38,7 @@ exports.up = function (knex, Promise) {
         .onUpdate('restrict')
         .notNullable()
 
-      table.string('permission', 20)
+      table.string('permission', 30)
         .references('id')
         .inTable('permission')
         .onDelete('cascade')
