@@ -12,5 +12,5 @@ exports.up = function (knex, Promise) {
 exports.down = function (knex, Promise) {
   return knex.schema
     .raw('drop trigger on_user_role_insertion;')
-    .raw('drop function check_role_duplication;')
+    .raw('drop function check_role_duplication();')
 }

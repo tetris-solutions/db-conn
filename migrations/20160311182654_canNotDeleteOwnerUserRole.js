@@ -12,5 +12,5 @@ exports.up = function (knex, Promise) {
 exports.down = function (knex, Promise) {
   return knex.schema
     .raw('drop trigger check_if_user_is_owner;')
-    .raw('drop function on_user_role_deletion;')
+    .raw('drop function on_user_role_deletion();')
 }

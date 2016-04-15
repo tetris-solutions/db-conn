@@ -13,5 +13,5 @@ exports.up = function (knex, Promise) {
 exports.down = function (knex, Promise) {
   return knex.schema
     .raw('drop trigger on_user_email_insertion;')
-    .raw('drop function invite_to_user_role;')
+    .raw('drop function invite_to_user_role();')
 }
