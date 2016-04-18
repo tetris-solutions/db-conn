@@ -3,8 +3,14 @@
   "version": "1.3.10",
   "description": "database connection",
   "main": "index.js",
+  "bin": {
+    "db-conn": "bin/cmd.js"
+  },
   "scripts": {
-    "knex": "knex"
+    "knex": "knex",
+    "create": "bin/cmd.js db:create",
+    "migrate": "bin/cmd.js db:migrate",
+    "seed": "bin/cmd.js db:seed"
   },
   "repository": {
     "type": "git",
@@ -14,6 +20,7 @@
     "url": "https://github.com/tetris-solutions/db-conn/issues"
   },
   "files": [
+    "bin",
     "lib",
     "migrations",
     "seeds",
