@@ -4,6 +4,7 @@ exports.seed = function (knex, Promise) {
 
     // Inserts seed entries
     knex('platform').insert({id: 'facebook', name: 'Facebook'}),
-    knex('platform').insert({id: 'adwords', name: 'Google AdWords'})
+    knex('platform').insert({id: 'adwords', name: 'Google AdWords'}),
+    knex('platform').insert({id: 'twitter', name: 'Twitter'})
   )
 }
