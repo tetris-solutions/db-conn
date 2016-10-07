@@ -5,11 +5,12 @@ var predefinedRoles = exports.predefinedRoles = {
 var permissions = exports.permissions = [
   {id: 'CreateRole'},
   {id: 'EditRoleMembers'},
-  {id: 'APCreateWorkspace', app: 'AdPeek'},
-  {id: 'APCreateFolder', app: 'AdPeek'},
-  {id: 'APCreateCampaign', app: 'AdPeek'},
-  {id: 'APAutoBudget', app: 'AdPeek'},
-  {id: 'APBudgetOptimization', app: 'AdPeek'}
+  {id: 'APEditWorkspaces', app: 'AdPeek'},
+  {id: 'APEditFolders', app: 'AdPeek'},
+  {id: 'APEditCampaigns', app: 'AdPeek'},
+  {id: 'APEditOrders', app: 'AdPeek'},
+  {id: 'APBrowseReports', app: 'AdPeek'},
+  {id: 'APEditReports', app: 'AdPeek'}
 ]
 var uuid = require('uuid').v4
 
@@ -49,16 +50,18 @@ exports.seed = function (knex, Promise) {
         {id: uuid(), permission: 'CreateRole', locale: 'en', name: 'Create role'},
         {id: uuid(), permission: 'EditRoleMembers', locale: 'pt-BR', name: 'Editar membros de grupo'},
         {id: uuid(), permission: 'EditRoleMembers', locale: 'en', name: 'Edit role members'},
-        {id: uuid(), permission: 'APCreateWorkspace', locale: 'pt-BR', name: 'Criar área de trabalho'},
-        {id: uuid(), permission: 'APCreateWorkspace', locale: 'en', name: 'Create workspace'},
-        {id: uuid(), permission: 'APCreateFolder', locale: 'pt-BR', name: 'Criar pasta'},
-        {id: uuid(), permission: 'APCreateFolder', locale: 'en', name: 'Create folder'},
-        {id : uuid(), permission: 'APCreateCampaign', locale: 'pt-BR', name: 'Criar campanha'},
-        {id : uuid(), permission: 'APCreateCampaign', locale: 'en', name: 'Create campaign'},
-        {id : uuid(), permission: 'APAutoBudget', locale: 'pt-BR', name: 'Configurar o Auto-Budget'},
-        {id : uuid(), permission: 'APAutoBudget', locale: 'en', name: 'Setup Auto-Bugdget'},
-        {id : uuid(), permission: 'APBudgetOptimization', locale: 'pt-BR', name: 'Acesso a otimizações de budget'},
-        {id : uuid(), permission: 'APBudgetOptimization', locale: 'en', name: 'Access to budget optimizations'}
+        {id: uuid(), permission: 'APEditWorkspaces', locale: 'pt-BR', name: 'Editar Áreas de Trabalho'},
+        {id: uuid(), permission: 'APEditWorkspaces', locale: 'en', name: 'Edit Workspaces'},
+        {id: uuid(), permission: 'APEditFolders', locale: 'pt-BR', name: 'Editar Pastas'},
+        {id: uuid(), permission: 'APEditFolders', locale: 'en', name: 'Edit Folders'},
+        {id : uuid(), permission: 'APEditCampaigns', locale: 'pt-BR', name: 'Editar Campanhas'},
+        {id : uuid(), permission: 'APEditCampaigns', locale: 'en', name: 'Edit Campaigns'},
+        {id : uuid(), permission: 'APEditOrders', locale: 'pt-BR', name: 'Editar Pedidos'},
+        {id : uuid(), permission: 'APEditOrders', locale: 'en', name: 'Edit Orders'},
+        {id : uuid(), permission: 'APBrowseReports', locale: 'pt-BR', name: 'Navegar Relatórios'},
+        {id : uuid(), permission: 'APBrowseReports', locale: 'en', name: 'Browse Reports'},
+        {id : uuid(), permission: 'APEditReports', locale: 'pt-BR', name: 'Editar Relatórios'},
+        {id : uuid(), permission: 'APEditReports', locale: 'en', name: 'Edit Reports'}
       ])
     },
     function () {

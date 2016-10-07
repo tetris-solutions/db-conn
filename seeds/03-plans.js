@@ -47,7 +47,7 @@ exports.seed = function (knex, Promise) {
       var demoPerms = perms.map(function (permission) {
         return {id: uuid(), plan: plans.demo.id, permission: permission}
       })
-      var starterPackPerms = without(perms, 'APBudgetOptimization').map(function (permission) {
+      var starterPackPerms = without(perms, 'APBrowseReports', 'APEditReports').map(function (permission) {
         return {id: uuid(), plan: plans.starterPack.id, permission: permission}
       })
       var ultimatePerms = perms.map(function (permission) {
