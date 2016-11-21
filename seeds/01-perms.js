@@ -31,7 +31,7 @@ exports.seed = function (knex, Promise) {
     },
     function () {
       return knex('app').insert([
-        {id: 'AdPeek', name: 'AdPeek App'}
+        {id: 'AdPeek', name: 'Tetris Manager'}
       ])
     },
     function () {
