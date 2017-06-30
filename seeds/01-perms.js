@@ -11,7 +11,8 @@ var permissions = exports.permissions = [
   {id: 'APEditCampaigns', app: 'AdPeek'},
   {id: 'APEditOrders', app: 'AdPeek'},
   {id: 'APBrowseReports', app: 'AdPeek'},
-  {id: 'APEditReports', app: 'AdPeek'}
+  {id: 'APEditReports', app: 'AdPeek'},
+  {id: 'APShoppingSetup', app: 'AdPeek'}
 ]
 var uuid = require('uuid').v4
 
@@ -67,7 +68,10 @@ exports.seed = function (knex, Promise) {
         {id: uuid(), permission: 'APBrowseReports', locale: 'pt-BR', name: 'Navegar Relatórios'},
         {id: uuid(), permission: 'APBrowseReports', locale: 'en', name: 'Browse Reports'},
         {id: uuid(), permission: 'APEditReports', locale: 'pt-BR', name: 'Editar Relatórios'},
-        {id: uuid(), permission: 'APEditReports', locale: 'en', name: 'Edit Reports'}
+        {id: uuid(), permission: 'APEditReports', locale: 'en', name: 'Edit Reports'},
+
+        {id: uuid(), permission: 'APShoppingSetup', locale: 'pt-BR', name: 'Configurar Shopping'},
+        {id: uuid(), permission: 'APShoppingSetup', locale: 'en', name: 'Shopping Setup'}
       ])
     },
     function () {
