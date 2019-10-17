@@ -10,6 +10,7 @@ exports.seed = function (knex, Promise) {
     knex('platform').insert({id: 'twitter', name: 'Twitter'}),
     knex('platform').insert({id: 'vtex', name: 'VTEX'}),
     knex('platform').insert({id: 'linkedin', name: 'LinkedIn'}),
-    knex('platform').insert({id: 'microsoft', name: 'Microsoft'})
+    knex('platform').insert({id: 'microsoft', name: 'Microsoft'}),
+    knex('platform').insert({id: 'criteo', name: 'Criteo'})
   )
 }
