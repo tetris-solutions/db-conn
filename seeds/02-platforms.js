@@ -13,6 +13,8 @@ exports.seed = function (knex, Promise) {
     knex('platform').insert({id: 'microsoft', name: 'Microsoft'}),
     knex('platform').insert({id: 'criteo', name: 'Criteo'}),
     knex('platform').insert({id: 'youtube', name: 'Youtube'}),
-    knex('platform').insert({id: 'linx', name: 'Linx'})
+    knex('platform').insert({id: 'linx', name: 'Linx'}),
+    knex('platform').insert({id: 'taboola', name: 'Taboola'}),
+    knex('platform').insert({id: 'amazon', name: 'Amazon Ads'})
   )
 }
