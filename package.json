@@ -35,9 +35,9 @@
   "homepage": "https://github.com/tetris-solutions/db-conn#readme",
   "dependencies": {
     "@tetris/serialize-error": "^1.0.0",
-    "knex": "^0.10.0",
+    "knex": "^0.95.0",
     "lodash": "^4.9.0",
-    "pg": "^4.5.1",
+    "pg": "^8.6.0",
     "uuid": "^2.0.1",
     "winston": "^2.2.0"
   }

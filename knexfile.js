@@ -1,11 +1,10 @@
 var uniqueConfig = {
   client: 'pg',
-  connection: {
-    database: 'tetris',
-    host: process.env.BASE_DB_HOST,
-    user: process.env.BASE_DB_USER,
-    password: process.env.BASE_DB_PWD
-  }
+  connection: `postgresql://${process.env.BASE_DB_USER}:${process.env.BASE_DB_PWD}@${process.env.BASE_DB_HOST}:5432/tetris`, 
+  pool: {
+    min:1,
+    max:51
+  },
 }
 
 /*
