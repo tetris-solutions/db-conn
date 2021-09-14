@@ -1,6 +1,7 @@
+let dbName = process.env.BASE_DB_NAME ? process.env.BASE_DB_NAME : 'tetris'
 var uniqueConfig = {
   client: 'pg',
-  connection: `postgresql://${process.env.BASE_DB_USER}:${process.env.BASE_DB_PWD}@${process.env.BASE_DB_HOST}:5432/tetris`, 
+  connection: `postgresql://${process.env.BASE_DB_USER}:${process.env.BASE_DB_PWD}@${process.env.BASE_DB_HOST}:5432/${dbName}`, 
   pool: {
     min:1,
     max:51
