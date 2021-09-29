@@ -1,5 +1,5 @@
 exports.up = function (knex, Promise) {
-return knex.schema.table('company', function (table) {
+    return knex.schema.table('company', function (table) {
         table.string('slug', 24)
     })
 }
