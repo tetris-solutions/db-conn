@@ -1,6 +1,6 @@
 {
   "name": "@tetris/db-conn",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "database connection",
   "engineStrict": true,
   "engines": {
