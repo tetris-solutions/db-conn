@@ -1,6 +1,9 @@
 exports.up = function (knex, Promise) {
     return knex.schema.table('company', function (table) {
-        table.string('status_instance').notNullable()
+        table
+            .string('status_instance')
+            .notNullable()
+            .defaultTo('registered')
     })
 }
 
