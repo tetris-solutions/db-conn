@@ -11,6 +11,7 @@ exports.up = function (knex, Promise) {
           .inTable('federated_platform')
           .onDelete('restrict')
           .onUpdate('restrict')
+          .alter()
       })
   }
   
