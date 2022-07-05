@@ -1,5 +1,6 @@
 var predefinedRoles = exports.predefinedRoles = {
-  admin: 'a89f4626-e10f-469a-8bc3-3fc33e4a0487'
+  admin: 'a89f4626-e10f-469a-8bc3-3fc33e4a0487',
+  odashRead: '28131d8a-7153-4424-9b33-64be383fe6b1'
 }
 
 var permissions = exports.permissions = [
@@ -78,7 +79,9 @@ exports.seed = function (knex, Promise) {
       return knex('predefined_role').del()
     },
     function () {
-      return knex('predefined_role').insert({id: predefinedRoles.admin})
+      return knex('predefined_role')
+        .insert({id: predefinedRoles.admin})
+        .insert({id: predefinedRoles.odashRead})
     },
     function () {
       return knex('predefined_role_name').del()
@@ -86,7 +89,9 @@ exports.seed = function (knex, Promise) {
     function () {
       return knex('predefined_role_name').insert([
         {id: uuid(), predefined_role: predefinedRoles.admin, locale: 'en', name: 'Administrator'},
-        {id: uuid(), predefined_role: predefinedRoles.admin, locale: 'pt-BR', name: 'Administrador'}
+        {id: uuid(), predefined_role: predefinedRoles.admin, locale: 'pt-BR', name: 'Administrador'},
+        {id: uuid(), predefined_role: predefinedRoles.odashRead, locale: 'en', name: 'oDash Read'},
+        {id: uuid(), predefined_role: predefinedRoles.odashRead, locale: 'pt-BR', name: 'oDash Read'},
       ])
     },
     function () {
