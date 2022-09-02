@@ -3,10 +3,13 @@ exports.seed = function (knex, Promise) {
       knex('federated_platform').del(),
   
       // Inserts seed entries
+      knex('federated_platform').insert({id: 'email', name: 'E-mail'}),
       knex('federated_platform').insert({id: 'facebook', name: 'Facebook'}),
       knex('federated_platform').insert({id: 'google', name: 'Google'}),
       knex('federated_platform').insert({id: 'microsoft', name: 'Microsoft'}),
-      knex('federated_platform').insert({id: 'amazon', name: 'Amazon'})
+      knex('federated_platform').insert({id: 'amazon', name: 'Amazon'}),
+      knex('federated_platform').insert({id: 'all', name: 'Qualquer tipo'})
+
     )
   }
   

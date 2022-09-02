@@ -22,6 +22,25 @@ begin
                 AND ur."user" = "user_email"."user"
         );
 
+    INSERT INTO company_user ("id", "company", "user")
+    SELECT
+        uuid_generate_v4() AS "id",
+        company."id",
+        user_email."user"
+    FROM user_email
+    JOIN invite ON "invite"."email" = NEW.id
+    JOIN role on "role"."id" = "invite"."role"
+    JOIN company ON "company"."id" = "role"."company" 
+    WHERE
+        "user_email"."id" = NEW.id
+        AND NOT EXISTS (
+            SELECT co."id"
+            FROM company_user co
+            WHERE
+                co."company" = "company"."id"
+                AND co."user" = "user_email"."user"
+        );
+
     DELETE FROM "invite" WHERE "invite"."email" = NEW.id;
 
     return NEW;
