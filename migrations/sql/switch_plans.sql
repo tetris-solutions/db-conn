@@ -23,7 +23,7 @@ begin
         INNER JOIN permission ON permission.id = role_permission.permission
         WHERE
             role.company = NEW.company
-            AND permission.app IS NOT NULL
+            AND permission.platform IS NOT NULL
     );
 
 -- search admin role
