@@ -15,14 +15,17 @@ exports.up = async function (knex) {
 
     const companiesID = await knex.select('id').from('company')
 
-    await knex('role').insert(
-      companiesID.map(companyID => ({
-        id: uuid(),
-        company: companyID.id,
-        name: 'oDash Read',
-        creation: knex.fn.now()
-      }))
-    )
+    if (companiesID.length > 0) {
+
+      await knex('role').insert(
+        companiesID.map(companyID => ({
+          id: uuid(),
+          company: companyID.id,
+          name: 'oDash Read',
+          creation: knex.fn.now()
+        }))
+      )
+    }
 
     // company-user
     const companyUsers = await knex.select([
@@ -32,14 +35,17 @@ exports.up = async function (knex) {
     .innerJoin('role', 'role.id', 'user_role.role')
     .innerJoin('company', 'company.id', 'role.company')
 
-    await knex('company_user').insert(
-        companyUsers.map(companyUser => ({
-          id: uuid(),
-          company: companyUser.company_ID,
-          user: companyUser.user_ID,
-          creation: knex.fn.now()
-        }))
-      )
+    if (companyUsers.length > 0) {
+
+      await knex('company_user').insert(
+          companyUsers.map(companyUser => ({
+            id: uuid(),
+            company: companyUser.company_ID,
+            user: companyUser.user_ID,
+            creation: knex.fn.now()
+          }))
+        )
+    }
    
     // plans
     const idPlanZero = uuid()

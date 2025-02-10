@@ -20,7 +20,8 @@ begin
             WHERE
                 ur."role" = "invite"."role"
                 AND ur."user" = "user_email"."user"
-        );
+        )
+        AND "invite"."role" IS NOT NULL;
 
     INSERT INTO company_user ("id", "company", "user")
     SELECT
@@ -39,7 +40,8 @@ begin
             WHERE
                 co."company" = "company"."id"
                 AND co."user" = "user_email"."user"
-        );
+        )
+        AND "invite"."role" IS NOT NULL;
 
     DELETE FROM "invite" WHERE "invite"."email" = NEW.id;
 
